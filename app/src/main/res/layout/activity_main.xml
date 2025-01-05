@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Header with back button -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp">
+
+            <ImageButton
+                android:id="@+id/btnBack"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:src="@drawable/baseline_arrow_back_24"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Withdrawal details"
+                android:textColor="@color/dark_gray"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!-- Amount Section -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:gravity="center"
+            android:text="2,488.679667 USDT"
+            android:textColor="@color/dark_gray"
+            android:textSize="32sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            android:gravity="center"
+            android:text="Amount"
+            android:textColor="@color/gray"
+            android:textSize="16sp" />
+
+        <!-- Status Section -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/bg_info_message"
+            android:padding="16dp"
+            android:layout_marginBottom="16dp">
+
+            <!-- Status Section -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingVertical="8dp">
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/baseline_check_circle_24" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:text="Completed"
+                    android:textColor="@color/green"
+                    android:textSize="18sp" />
+            </LinearLayout>
+
+            <!-- Divider -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/gray"
+                android:alpha="0.3"
+                android:layout_marginVertical="8dp"/>
+
+            <!-- Info Message -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="If you have not received your assets, please contact the receiving platform."
+                android:textColor="@color/gray"
+                android:paddingVertical="8dp"/>
+
+        </LinearLayout>
+
+        <!-- Transaction Details -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/bg_info_message"
+            android:padding="16dp">
+
+            <!-- Network Row -->
+            <LinearLayout style="@style/TransactionRow">
+                <TextView
+                    style="@style/TransactionLabel"
+                    android:text="Network"
+                    android:textColor="@color/gray" />
+
+                <TextView
+                    style="@style/TransactionValue"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:gravity="end"
+                    android:text="TRX\nTron(TRC20)"
+                    android:textAlignment="textEnd" />
+            </LinearLayout>
+
+            <!-- Address Row -->
+            <LinearLayout style="@style/TransactionRow">
+                <TextView
+                    style="@style/TransactionLabel"
+                    android:text="Address"
+                    android:textColor="@color/gray"
+                    android:layout_gravity="top"
+                    android:paddingTop="4dp" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="end|center_vertical">
+
+                        <TextView
+                            style="@style/TransactionValue"
+                            android:layout_width="wrap_content"
+                            android:textAlignment="textEnd"
+                            android:text="TBoFMJxKaYfngAtQhV9UCFsBc1SQLJvmrc" />
+
+                        <ImageButton
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:padding="2dp"
+                            android:scaleType="fitXY"
+                            android:background="?attr/selectableItemBackgroundBorderless"
+                            android:src="@drawable/outline_file_copy_24"
+                            android:layout_gravity="top" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:gravity="end"
+                        android:text="This address has not been saved in Address Management"
+                        android:textColor="@color/orange" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:layout_gravity="end"
+                        android:text="Save"
+                        android:background="@drawable/bg_info_message"
+                        android:textColor="@color/blue" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- TxID Row -->
+            <LinearLayout style="@style/TransactionRow">
+                <TextView
+                    style="@style/TransactionLabel"
+                    android:text="TxID"
+                    android:textColor="@color/gray"
+                    android:layout_gravity="top"
+                    android:paddingTop="4dp" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        style="@style/TransactionValue"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:gravity="end"
+                        android:text="0d67632367bb2215d55ccb9558218e9fa86364d5ccac09b41b2f54163a2462d4" />
+
+                    <ImageButton
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_marginStart="8dp"
+                        android:padding="2dp"
+                        android:scaleType="fitXY"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:src="@drawable/outline_file_copy_24"
+                        android:layout_gravity="top" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Fee Row -->
+            <LinearLayout style="@style/TransactionRow">
+                <TextView
+                    style="@style/TransactionLabel"
+                    android:text="Fee"
+                    android:textColor="@color/gray" />
+
+                <TextView
+                    style="@style/TransactionValue"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:gravity="end"
+                    android:text="1" />
+            </LinearLayout>
+
+            <!-- Time Row -->
+            <LinearLayout style="@style/TransactionRow">
+                <TextView
+                    style="@style/TransactionLabel"
+                    android:text="Time"
+                    android:textColor="@color/gray" />
+
+                <TextView
+                    style="@style/TransactionValue"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:gravity="end"
+                    android:text="2024.12.23 08:19:59" />
+            </LinearLayout>
+
+            <!-- Query Blockchain Row -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Query Blockchain"
+                    android:textColor="@color/gray" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:gravity="end"
+                    android:text="Blockchain explorer"
+                    android:textColor="@color/blue" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Query Blockchain Button -->
+
+
+        <!-- Help Section -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:gravity="center"
+            android:text="Need help? View FAQs"
+            android:textColor="@color/blue" />
+
+    </LinearLayout>
+</ScrollView>
